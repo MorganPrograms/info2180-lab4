@@ -1,6 +1,10 @@
 "use strict"; 
 
 window.onload = function(){
+    var press = document.getElementsByClassName("btn")[0];
+    press.addEventListener("click", function(){
+        window.location.reload();
+    }); 
     var board = document.getElementById("board");
     var squares = board.getElementsByTagName("div");
     var show = document.getElementById("status"); 
