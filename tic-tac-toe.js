@@ -8,6 +8,12 @@ window.onload = function(){
     for (var i  = 0; i < squares.length; i+=1){
         var count = 1; 
         squares[i].classList.add("square");
+        squares[i].addEventListener("mouseover", function(){
+            this.classList.add("hover");
+        })
+        squares[i].addEventListener("mouseleave", function(){
+            this.classList.remove("hover");
+        })
         squares[i].addEventListener("click", function() {
             if(count % 2 === 1){
                 if (this.innerHTML != "X" && this.innerHTML != "O"){
