@@ -3,15 +3,21 @@
 window.onload = function(){
     var show = document.getElementById("status"); 
     var press = document.getElementsByClassName("btn")[0];
-    press.addEventListener("click", function(){
-        window.location.reload();
-    }); 
     var board = document.getElementById("board");
     var squares = board.getElementsByTagName("div");
 
-
     for (var i  = 0; i < squares.length; i+=1){
-        var count = "O"; 
+        var count = "O";
+        press.addEventListener("click", function(){
+            for (var x = 0; x < squares.length; x+=1){
+                squares[x].innerHTML = null; 
+                squares[x].classList.remove("X");
+                squares[x].classList.remove("O");
+            }
+            show.innerHTML = "Move your mouse over a square and click to play an X or an O.";
+            show.className = "status";
+            count = "O";
+        }); 
         squares[i].classList.add("square");
         squares[i].addEventListener("mouseover", function(){
             this.classList.add("hover");
